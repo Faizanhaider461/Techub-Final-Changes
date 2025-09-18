@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Top Navbar */
+.navbar-top {
+  background-color: rgb(73, 161, 255);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  font-size: 14px;
+}
+.navbar-top i {
+  margin-right: 6px;
+}
+
+/* Middle Navbar */
+.navbar-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: white;
+  height: 90px;
+}
+
+/* Bottom Navbar */
+.navbar-bottom {
+  height: 80px;
+  background-color: rgb(73, 161, 255);
+  position: sticky;
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+}
+.navbar-bottom .nav-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.navbar-bottom ul {
+  display: flex;
+  align-items: center;
+  margin-left: 3%;
+  list-style: none;
+  gap: 2rem;
+}
+.navbar-bottom ul li a {
+  color: white;
+  font-weight: bold;
+  font-size: 18.5px;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.navbar-bottom ul li a:hover {
+  color: #f0c330;
+}
+
+/* Support button */
+.support-btn {
+  background: white;
+  color: #073a8a !important;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 25px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 179%;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.support-btn:hover {
+  background: linear-gradient(90deg, #f0c330, #ffd700);
+  transform: scale(1.05);
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 5px 10px;
+  background: rgb(73, 161, 255);
+  color: white;
+  border-radius: 5px;
+  z-index: 1200; /* stays above menu */
+  position: relative;
+}
+
+/* Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 900;
+}
+.newsu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.textsu h1 {
+  color: #073a8a;
+}
+.textsu p {
+  color: grey;
+}
+.btnsu {
+  background-color: red;
+  color: white;
+  padding: 10px 12px;
+  border: 2px solid red;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btnsu:hover {
+  background-color: rgb(215, 8, 8);
+  border-color: rgb(215, 8, 8);
+}
+.imgsu img {
+  height: 120px;
+  width: 160px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .navbar-bottom ul {
+    gap: 1rem;
+    margin-left: 2%;
+  }
+  .support-btn {
+    background: white;
+    color: #073a8a !important;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 10px 25px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 129%;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+}
+@media (max-width: 992px) {
+  .navbar-bottom ul {
+    gap: 1rem;
+    margin-left: 2%;
+  }
+  .support-btn {
+    background: white;
+    color: #073a8a !important;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 10px 25px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 19%;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-top {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .textsu {
+    display: none;
+  }
+
+  /* When menu is active, move toggle inside top-right */
+  .menu-toggle.active {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: rgb(73, 161, 255);
+  }
+
+  .navbar-bottom ul {
+    position: fixed;
+    top: 0;
+    margin-left: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background: rgb(73, 161, 255);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 20px;
+    gap: 1.5rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  .navbar-bottom ul.active {
+    right: 0;
+  }
+  .navbar-bottom ul li a {
+    font-size: 18px;
+    width: 100%;
+  }
+  .support-btn {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 14px 10px;
+  }
+
+  .navbar-middle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    background: white;
+  }
+  .btnsu {
+    background-color: red;
+    color: white;
+    padding: 10px 12px;
+    border: 2px solid red;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .imgsu img {
+    height: 120px;
+    width: 160px;
+  }
+  .navbar-top {
+    justify-content: center;
+  }
+  .navbar-bottom {
+    background: none; /* removes blue background */
+    height: auto; /* shrink height so no blue line shows */
+  }
+
+  .navbar-bottom .nav-container {
+    justify-content: flex-end; /* keeps hamburger on right */
+  }
+}
+/* Farhan Changes */
+.mobileMenuDiv {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 600px) {
+  .imgsu img {
+    height: 100px;
+    width: 130px;
+  }
+  .btnsu {
+    border-radius: 5px;
+    padding: 5px 6px;
+    font-size: 14px;
+  }
+  .support-btn {
+    border-radius: 5px;
+    padding: 5px 6px;
+  }
+}
